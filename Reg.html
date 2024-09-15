@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; height: 100%;">
+
+<header style="background-color: #4CAF50; color: white; padding: 20px; display: flex; align-items: center; justify-content: space-between;">
+  <img src="Study.png" alt="Logo" style="width: 50px; height: auto;">
+  <nav>
+    <a href="index.html" style="color: white; text-decoration: none; margin-right: 15px;">Home</a>
+    <a href="courses.html" style="color: white; text-decoration: none; margin-right: 15px;">Courses</a>
+    <a href="contact.html" style="color: white; text-decoration: none; margin-right: 15px;">Contact us</a>
+  </nav>
+</header>
+
+<main style="padding: 20px; background-color: #fff; text-align: center">
+  <h2></h2>
+  <form>
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" required style="width: 100%; max-width: 300px; padding: 8px;"><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required style="width: 100%; max-width: 300px; padding: 8px;"><br><br>
+
+    <label for="phone">Phone number:</label><br>
+    <input type="phone" id="phone" name="phone" style="width: 100%; max-width: 300px; padding: 8px;"><br><br>
+    <label for="telegram">Telegram:</label><br>
+    <input type="phone" id="telegram" name="phone" style="width: 100%; max-width: 300px; padding: 8px;"><br><br>
+
+    <div class="panel-container">
+      <label class="panel" for="option1">
+        <input type="radio" id="option1" name="selection" value="Option 1">
+        IELTS Preparation
+      </label>
+
+      <label class="panel" for="option2">
+        <input type="radio" id="option2" name="selection" value="Option 2">
+        General English
+      </label>
+    </div>
+    <label for="message">Message:</label><br>
+    <textarea id="message" name="message" rows="4" style="width: 100%; max-width: 300px; padding: 8px;"></textarea><br><br>
+
+    <button type="submit" style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none;">Submit</button>
+  </form>
+</main>
+
+<footer style="background-color: #333; color: white; text-align: center; padding: 10px 0; position:  absolute  ;left:0;bottom:  0;width:   100%;">
+  <p>&copy; 2024 You. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
