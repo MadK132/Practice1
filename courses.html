@@ -4,36 +4,56 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Courses</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-
 </head>
 <body>
-<header class="header">
-  <img src="Study.png" alt="Logo" style="width: 50px; height: auto;">
-  <nav>
-    <a href="index.html" class="a">Home</a>
-    <a href="contact.html" class="a">Contact Us</a>
-  </nav>
+<header class="header py-3">
+  <div class="container d-flex justify-content-between align-items-center">
+    <img src="Study.png" alt="Logo" style="width: 50px; height: auto;">
+    <nav>
+      <a href="index.html" class="btn btn-link a">Home</a>
+      <a href="contact.html" class="btn btn-link a">Contact Us</a>
+    </nav>
+  </div>
 </header>
 
-<main style="padding: 20px; background-color: #e8e8e8; min-height: calc(100vh - 120px);">
-  <h2 style="text-align: center">Our Courses</h2>
-  <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-    <div style="background-color: #ffffff; border: 1px solid #ddd; padding: 10px; width: 15%; height: 150px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-      <img src="test.png" alt="test" style="width: 100px; padding-left: 60px; height: auto;">
-      <h3 style="padding-left: 30px">IELTS Preparation</h3>
+<main class="container my-5">
+  <h2 class="text-center mb-4">Our Courses</h2>
+  <div class="row justify-content-center">
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        <a href="test.html">
+          <img src="test.png" class="card-img-top mx-auto d-block" alt="IELTS Preparation" style="width: 100px; margin-top:3%">
+        </a>
+        <div class="card-body text-center">
+          <h5 class="card-title">IELTS Preparation</h5>
+        </div>
+      </div>
     </div>
-    <div style="background-color: #ffffff; border: 1px solid #ddd; padding: 10px; width: 15%; height: 150px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-      <img src="dom.png" alt="dom" style="width: 130px; padding-left: 40px; height: auto;">
-      <h3 style="padding-left: 40px">General English</h3>
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        <a href="general.html">
+          <img src="dom.png" class="card-img-top mx-auto d-block" alt="General English" style="width: 130px; margin-top: 3%">
+        </a>
+        <div class="card-body text-center">
+          <h5 class="card-title">General English</h5>
+        </div>
+      </div>
     </div>
   </div>
-  <button type="submit" style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; width: 25%; margin-top: 75px; margin-left: 550px; text-align: center"><h2><b>Select</b></h2></button>
+  <div class="text-center">
+    <button type="submit" class="btn btn-success btn-lg">Select</button>
+  </div>
 </main>
 
-<footer class="footer" style="position: relative;">
+<footer class="footer text-center py-3" style="position: relative">
   <p>&copy; 2024 You. All Rights Reserved.</p>
 </footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 </html>

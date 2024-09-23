@@ -4,41 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-
 </head>
 <body>
 
-<header class="header">
-    <img src="Study.png" alt="Logo" style="width: 50px; height: auto;">
-    <nav>
-        <a href="index.html" class="a">Home</a>
-        <a href="courses.html" class="a">Courses</a>
-    </nav>
+<header class="header py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+        <img src="Study.png" alt="Logo" style="width: 50px; height: auto;">
+        <nav>
+            <a href="index.html" class="btn btn-link a">Home</a>
+            <a href="courses.html" class="btn btn-link a">Courses</a>
+        </nav>
+    </div>
 </header>
 
-<main style="padding: 20px; background-color: #fff; text-align: center">
-    <h2>Contact Us</h2>
+<main class="container my-5">
+    <h2 class="text-center mb-4">Contact Us</h2>
     <form>
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name" required class="input"><br><br>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" class="form-control" required>
+        </div>
 
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required class="input"><br><br>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" class="form-control" required>
+        </div>
 
-        <label for="phone">Phone number:</label><br>
-        <input type="phone" id="phone" name="phone" class="input"><br><br>
+        <div class="form-group">
+            <label for="phone">Phone number:</label>
+            <input type="tel" id="phone" name="phone" class="form-control">
+        </div>
 
-        <label for="message">Message:</label><br>
-        <textarea id="message" name="message" rows="4" class="input"></textarea><br><br>
+        <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" class="form-control"></textarea>
+        </div>
 
-        <button type="submit" class="button">Submit</button>
+        <button type="submit" class="button btn-primary" style="margin-left:45%">Submit</button>
     </form>
 </main>
 
-<footer class="footer">
+<footer class="footer text-center py-3" style="position: relative;">
     <p>&copy; 2024 You. All Rights Reserved.</p>
 </footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 </html>
