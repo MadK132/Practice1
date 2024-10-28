@@ -11,51 +11,23 @@
 <body>
 <script>
 
-    function myMenuFunction() {
-        var i = document.getElementById("navMenu");
-        if(i.className === "nav-menu") {
-            i.className += " responsive";
-        } else {
-            i.className = "nav-menu";
-        }
-    }
-
-</script>
-<script>
-    var a = document.getElementById("loginBtn");
-    var b = document.getElementById("registerBtn");
-    var x = document.getElementById("login");
-    var y = document.getElementById("register");
-    function login() {
-        x.style.left = "4px";
-        y.style.right = "-520px";
-        a.className += " white-btn";
-        b.className = "btn";
-        x.style.opacity = 1;
-        y.style.opacity = 0;
-    }
-    function register() {
-        x.style.left = "-510px";
-        y.style.right = "5px";
-        a.className = "btn";
-        b.className += " white-btn";
-        x.style.opacity = 0;
-        y.style.opacity = 1;
-    }
-</script>
+    </script>
 <header class="header py-3">
     <div class="container d-flex justify-content-between">
-        <img src="Study.png" alt="Logo" style="width: 50px; height: auto;">
         <nav class="nav">
+            <div class="nav-logo" style="padding-right: 20%">
+                <p>STUDY</p>
+            </div>
             <div class="nav-menu" id="navMenu">
                 <ul>
                     <li><a href="courses.html" class="link">Courses</a></li>
                     <li><a href="contact.html" class="link">Contact us</a></li>
                 </ul>
             </div>
-            <div class="nav-button">
-                <button  class="btn white-btn" id="loginBtn" onclick="login()"> <a href="Login.html" class="link"> Sign In </a></button>
-                <button class="btn" id="registerBtn" onclick="register()"> <a href="Login.html" class="link"> Sign Up </a></button>
+            <div class="nav-menu" id="navMenuu">
+                <ul>
+                    <li><a href="Login.html" class="link">Log In / Sign Up</a></li>
+                </ul>
             </div>
         </nav>
     </div>
