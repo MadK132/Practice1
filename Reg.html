@@ -22,7 +22,7 @@
 
 <main class="container my-5">
   <h2 class="text-center mb-4">Register for a Course</h2>
-  <form>
+  <form id="registerForm">
     <div class="form-group">
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" class="form-control" required>
@@ -46,7 +46,7 @@
     <div class="form-group">
       <label>Course Selection:</label><br>
       <div class="form-check form-check-inline">
-        <input type="radio" id="option1" name="selection" value="IELTS Preparation" class="form-check-input">
+        <input type="radio" id="option1" name="selection" value="IELTS Preparation" class="form-check-input" required>
         <label class="form-check-label" for="option1">IELTS Preparation</label>
       </div>
       <div class="form-check form-check-inline">
@@ -60,17 +60,26 @@
       <textarea id="message" name="message" rows="4" class="form-control"></textarea>
     </div>
 
-    <button type="submit" class="button btn-primary" style="margin-left:45%">Submit</button>
+    <div class="d-flex">
+      <button type="submit" class="button btn-primary">Submit</button>
+    </div>
   </form>
 </main>
 
-<footer class="footer text-center py-3" style="position: relative">
-  <p>&copy; 2024 You. All Rights Reserved.</p>
+<footer class="footer bg-dark text-white text-center py-3" style="position: relative ;">
+  <p>SE-2304. All Rights Reserved.</p>
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+  document.getElementById('registerForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert("Thank you for registering!");
+  });
+</script>
 
 </body>
 </html>
