@@ -6,13 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4233be04-0019-414f-8113-18faf0d376a0" name="Changes" comment="Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/General.html" beforeDir="false" afterPath="$PROJECT_DIR$/General.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reg.html" beforeDir="false" afterPath="$PROJECT_DIR$/Reg.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test.html" beforeDir="false" afterPath="$PROJECT_DIR$/Test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/contact.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/courses.html" beforeDir="false" afterPath="$PROJECT_DIR$/courses.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -123,7 +118,7 @@
       <workItem from="1729244398770" duration="1165000" />
       <workItem from="1729676760630" duration="2721000" />
       <workItem from="1730098818012" duration="2239000" />
-      <workItem from="1730107009245" duration="7955000" />
+      <workItem from="1730107009245" duration="18857000" />
     </task>
     <task id="LOCAL-00001" summary="Commit for some updating with photos">
       <option name="closed" value="true" />
@@ -197,7 +192,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730110444314</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1730119684234</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1730119684234</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

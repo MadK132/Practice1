@@ -101,8 +101,8 @@ main {
     justify-content: center;
     width: 512px;
     height: 420px;
-    overflow: hidden;
     z-index: 2;
+    overflow: hidden;
 }
 .login-container{
     position: absolute;
@@ -249,4 +249,13 @@ main {
         flex-direction: column;
         gap: 0;
     }
+}
+.course-card {
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: border 0.3s ease;
+}
+
+.course-card.selected {
+    border: 2px solid green;
 }

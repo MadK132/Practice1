@@ -29,25 +29,22 @@
   </div>
 </header>
 
-
 <main class="container my-5">
   <h2 class="text-center mb-4">Our Courses</h2>
   <div class="row justify-content-center">
+    <!-- IELTS Card -->
     <div class="col-md-4 mb-4">
-      <div class="card h-100">
-        <a href="test.html">
-          <img src="test.png" class="card-img-top mx-auto d-block" alt="IELTS Preparation" style="width: 100px; margin-top:3%">
-        </a>
+      <div class="card h-100 course-card" data-link="test.html" onclick="selectCourse(this)">
+        <img src="test.png" class="card-img-top mx-auto d-block" alt="IELTS Preparation" style="width: 100px; margin-top:3%">
         <div class="card-body text-center">
           <h5 class="card-title">IELTS Preparation</h5>
         </div>
       </div>
     </div>
+    <!-- General English Card -->
     <div class="col-md-4 mb-4">
-      <div class="card h-100">
-        <a href="general.html">
-          <img src="dom.png" class="card-img-top mx-auto d-block" alt="General English" style="width: 130px; margin-top: 3%">
-        </a>
+      <div class="card h-100 course-card" data-link="general.html" onclick="selectCourse(this)">
+        <img src="dom.png" class="card-img-top mx-auto d-block" alt="General English" style="width: 130px; margin-top: 3%">
         <div class="card-body text-center">
           <h5 class="card-title">General English</h5>
         </div>
@@ -55,17 +52,62 @@
     </div>
   </div>
   <div class="text-center">
-    <button type="submit" class="btn btn-success btn-lg">Select</button>
+    <button type="button" class="btn btn-success btn-lg" onclick="goToSelectedCourse()">Select</button>
+  </div>
+  <div class="my-5">
+    <h3 class="text-center">Interactive Dictionary</h3>
+    <div class="input-group mb-3">
+      <input type="text" id="wordInput" class="form-control" placeholder="Enter a word">
+      <div class="input-group-append">
+        <button class="btn btn-primary" type="button" onclick="getDefinition()">Define</button>
+      </div>
+    </div>
+    <div id="definitionBox" class="text-center"></div>
   </div>
 </main>
 
-<footer class="footer bg-dark text-white text-center py-3" style="position: relative ;">
+<footer class="footer bg-dark text-white text-center py-3">
   <p>SE-2304. All Rights Reserved.</p>
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+  let selectedCourseLink = null;
+
+  function selectCourse(card) {
+    document.querySelectorAll('.course-card').forEach(c => c.classList.remove('selected'));
+    card.classList.add('selected');
+    selectedCourseLink = card.getAttribute('data-link');
+  }
+
+  function goToSelectedCourse() {
+    if (selectedCourseLink) {
+      window.location.href = selectedCourseLink;
+    } else {
+      alert('Please select a course before proceeding.');
+    }
+  }
+
+  function getDefinition() {
+    const word = document.getElementById("wordInput").value;
+    const definitionBox = document.getElementById("definitionBox");
+
+    // Пример данных (можно заменить на API)
+    const dictionary = {
+      "apple": "A round fruit with red or green skin and a whitish interior.",
+      "banana": "A long curved fruit that grows in clusters and has soft pulpy flesh and yellow skin when ripe."
+    };
+
+    if (dictionary[word]) {
+      definitionBox.innerHTML = `<h2>${word}</h2><p>${dictionary[word]}</p>`;
+    } else {
+      definitionBox.innerHTML = `<p>Определение не найдено.</p>`;
+    }
+  }
+</script>
 
 </body>
 </html>
