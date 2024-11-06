@@ -219,6 +219,11 @@
         const password = document.getElementById("registerPassword").value;
 
         if (firstname && lastname && email && password) {
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                return;
+            }
+
             const newUser = {
                 username: `${firstname} ${lastname}`,
                 email: email,
@@ -235,6 +240,7 @@
             alert("Please fill out all fields.");
         }
     }
+
 
     function loadUsers() {
         const userTableBody = document.getElementById("userTableBody");
