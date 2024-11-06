@@ -95,17 +95,51 @@
     const word = document.getElementById("wordInput").value;
     const definitionBox = document.getElementById("definitionBox");
 
-    // Пример данных (можно заменить на API)
-    const dictionary = {
-      "apple": "A round fruit with red or green skin and a whitish interior.",
-      "banana": "A long curved fruit that grows in clusters and has soft pulpy flesh and yellow skin when ripe."
-    };
+    const xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
 
-    if (dictionary[word]) {
-      definitionBox.innerHTML = `<h2>${word}</h2><p>${dictionary[word]}</p>`;
-    } else {
-      definitionBox.innerHTML = `<p>Определение не найдено.</p>`;
-    }
+    xhr.addEventListener('readystatechange', function () {
+      if (this.readyState === this.DONE) {
+        const response = JSON.parse(this.responseText);
+        if (response.definitions && response.definitions.length > 0) {
+          const definition = response.definitions[0].definition;
+          definitionBox.innerHTML = `<h2>${word}</h2><p>Definition: ${definition}</p>`;
+
+          getPronunciation(word);
+        } else {
+          definitionBox.innerHTML = `<p>Definition not found.</p>`;
+        }
+      }
+    });
+
+    xhr.open('GET', `https://wordsapiv1.p.rapidapi.com/words/${word}/definitions`);
+    xhr.setRequestHeader('x-rapidapi-key', 'e6f2f83a92msh74b74897cc2ba4cp10a26djsnf8c93d39893f');
+    xhr.setRequestHeader('x-rapidapi-host', 'wordsapiv1.p.rapidapi.com');
+    xhr.send();
+  }
+
+  function getPronunciation(word) {
+    const pronunciationBox = document.getElementById("definitionBox");
+
+    const xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+
+    xhr.addEventListener('readystatechange', function () {
+      if (this.readyState === this.DONE) {
+        const response = JSON.parse(this.responseText);
+        if (response.pronunciation) {
+          const pronunciation = response.pronunciation.all || response.pronunciation;
+          pronunciationBox.innerHTML += `<p>Pronunciation: ${pronunciation}</p>`;
+        } else {
+          pronunciationBox.innerHTML += `<p>Pronunciation not found.</p>`;
+        }
+      }
+    });
+
+    xhr.open('GET', `https://wordsapiv1.p.rapidapi.com/words/${word}/pronunciation`);
+    xhr.setRequestHeader('x-rapidapi-key', 'e6f2f83a92msh74b74897cc2ba4cp10a26djsnf8c93d39893f');
+    xhr.setRequestHeader('x-rapidapi-host', 'wordsapiv1.p.rapidapi.com');
+    xhr.send();
   }
 </script>
 
