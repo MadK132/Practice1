@@ -7,7 +7,7 @@
     <title>Login System</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body style="background-color: lightblue">
+<body style="background-color: #121212;">
 <header class="header py-3">
     <div class="container d-flex justify-content-between align-items-center">
         <nav class="nav">
@@ -51,14 +51,10 @@
             <input type="submit" class="submit" value="Sign In" onclick="showLogin()">
         </div>
         <div class="two-col">
-            <div class="one">
-                <input type="checkbox" id="login-check">
-                <label for="login-check"> Remember Me</label>
-            </div>
+            <div class="one"></div>
         </div>
     </div>
 
-    <!-- Admin Panel -->
     <div id="adminPanel" class="container my-5" style="display: none;">
         <h2 class="text-center mb-4">Admin Panel - User Management</h2>
         <table class="table table-bordered">
@@ -70,8 +66,7 @@
                 <th>Actions</th>
             </tr>
             </thead>
-            <tbody id="userTableBody">
-            </tbody>
+            <tbody id="userTableBody"></tbody>
         </table>
     </div>
 
@@ -102,13 +97,9 @@
             <input type="submit" class="submit" value="Register" onclick="registerUser()">
         </div>
         <div class="two-col">
-            <div class="one">
-                <input type="checkbox" id="register-check">
-                <label for="register-check"> Remember Me</label>
-            </div>
+            <div class="one"></div>
         </div>
     </div>
-</div>
 </div>
 
 <script>
@@ -179,6 +170,7 @@
 
         if (user) {
             alert("Successful login!");
+            localStorage.setItem("currentUser", user.username);
             setTimeout(() => {
                 window.location.href = "index.html";
             }, 1500);
@@ -189,7 +181,6 @@
 
     function editUser(button) {
         const row = button.closest("tr");
-
 
         if (button.textContent === "Edit") {
             button.textContent = "Save";
@@ -220,7 +211,6 @@
             }
             return user;
         });
-
         localStorage.setItem("users", JSON.stringify(users));
     }
 
@@ -245,31 +235,30 @@
             let users = JSON.parse(localStorage.getItem("users") || "[]");
             users.push(newUser);
             localStorage.setItem("users", JSON.stringify(users));
-
             alert("Registration successful!");
-            location.reload();
+            login();
         } else {
-            alert("Please fill out all fields.");
+            alert("Please fill in all fields.");
         }
     }
 
-
     function loadUsers() {
+        const users = JSON.parse(localStorage.getItem("users") || "[]");
         const userTableBody = document.getElementById("userTableBody");
-        userTableBody.innerHTML = "";
 
-        let users = JSON.parse(localStorage.getItem("users") || "[]");
         users.forEach(user => {
             const row = document.createElement("tr");
+
             row.innerHTML = `
                 <td>${user.username}</td>
                 <td>${user.email}</td>
                 <td>${user.password}</td>
                 <td>
-                    <button onclick="editUser(this)" class="btn btn-primary btn-sm">Edit</button>
-                    <button onclick="deleteUser(this)" class="btn btn-danger btn-sm">Delete</button>
+                    <button class="btn btn-info" onclick="editUser(this)">Edit</button>
+                    <button class="btn btn-danger" onclick="deleteUser(this)">Delete</button>
                 </td>
             `;
+
             userTableBody.appendChild(row);
         });
     }
@@ -280,5 +269,9 @@
         localStorage.setItem("users", JSON.stringify(users));
     }
 </script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
